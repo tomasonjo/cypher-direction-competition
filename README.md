@@ -12,6 +12,7 @@ I believe that the direction of the relationship can be deterministically after 
 Therefore, I am hosting this competition to help us find the best implementation of validating and fixing relationship directions in Cypher statements as accurately and fast as possible.
 
 The idea is to use the winner's code and add it to LLM libraries like LangChain, LlamaIndex, and others.
+By applying to this competition, you are allowing me, or others, to re-use the provided code in any commercial or non-commercial application with appropriate attribution.
 
 ## Rules of the competition
 
