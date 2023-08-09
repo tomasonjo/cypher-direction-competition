@@ -61,8 +61,6 @@ When I was preparing the Cypher examples, I followed these guidelines:
 
 - If the given pattern doesn't fit the graph schema, simply return an empty string
 
-- All the nodes have only a single label
-
 - If the relationship is between two nodes of the same labels, there is nothing to validate or correct
 ```
 (:Person)-->(:Person), (:Person)-[:KNOWS]->(:Person)
