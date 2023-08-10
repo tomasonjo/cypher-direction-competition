@@ -88,6 +88,11 @@ When I was preparing the Cypher examples, I followed these guidelines:
 (:Person)-[:WORKS_AT*]->(:Person), (:Person)-[:WORKS_AT*1..4]->(:Person) 
 ```
 
+- Node labels or relationship types can optionally be wrapped with backticks
+```
+(:`Person`)-[:`WORKS_AT`]->(:Organization)
+```
+
 ## Disclaimer
 
 All rights reserved to change the conditions of the competition if needed or see fit.
