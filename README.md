@@ -79,6 +79,11 @@ When I was preparing the Cypher examples, I followed these guidelines:
 (:Person)-[:KNOWS|WORKS_AT]->(:Organization), (:Person)-[:!KNOWS]->(:Organization)
 ```
 
+- When variable length patten is used, we do not correct the direction
+```
+(:Person)-[:WORKS_AT*]->(:Person), (:Person)-[:WORKS_AT*1..4]->(:Person) 
+```
+
 ## Disclaimer
 
 All rights reserved to change the conditions of the competition if needed or see fit.
