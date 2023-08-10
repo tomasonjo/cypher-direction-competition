@@ -69,6 +69,10 @@ When I was preparing the Cypher examples, I followed these guidelines:
 ```
 (:Person)--(:Organization), (:Person)-[:WORKS_AT]-(:Organization)
 ```
+- If a node label is missing in the defined pattern, we can still validate if it fits the graph schema
+```
+(:Person)-[:WORKS_AT]->()
+```
 - If the input query doesn't define the relationship type, but at least one node label is given of a pattern, we check if any relationship exists that matches the pattern and correct it if needed
 ```
 (:Person)-->(), (:Organization)<-[r]-()
