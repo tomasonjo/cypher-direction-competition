@@ -38,7 +38,7 @@ Winners' code will be added to this repository.
 ## How to apply
 
 Fill out the form with your name and the link to a public GitHub repository with the implementation code: https://forms.gle/4pgArm8S8NqRa6sy8
-All applications received until Friday, 1st August 2023, 23.59 CEST time will be valid.
+All applications received until Friday, 1st September 2023, 23.59 CEST time will be valid.
 
 ## Test & Validation file
 
