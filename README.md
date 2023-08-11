@@ -27,15 +27,18 @@ The solutions will be judged based on the following three criterias, in the orde
 
 Prizes are the following:
 
-1. TBD
-2. TBD
-3. TBD
+1. 1500€
+2. 750€
+3. 250€
 
 Sponsored by Neo4j <3
 
+Winners' code will be added to this repository.
+
 ## How to apply
 
-TBD
+Fill out the form with your name and the link to a public GitHub repository with the implementation code: https://forms.gle/4pgArm8S8NqRa6sy8
+All applications received until Friday, 1st August 2023, 23.59 CEST time will be valid.
 
 ## Test & Validation file
 
@@ -51,9 +54,11 @@ The given schema is given as a list of triples where:
 [(Person, WORKS_AT, Organization)]
 ```
 
-- first element of the triple specifies the source or start node of a relationship
-- second element of the triple specifies the relationship type
-- third element of the triple specifies the target or end node of a relationship 
+- first element of the triple specifies the source or start node of a relationship: `Person`
+- second element of the triple specifies the relationship type: `WORKS_AT`
+- third element of the triple specifies the target or end node of a relationship: `Organization` 
+
+Please let me know if you find any bugs in the dataset!
 
 ## Cypher direction validation guides
 
@@ -83,7 +88,7 @@ When I was preparing the Cypher examples, I followed these guidelines:
 (:Person)-[:KNOWS|WORKS_AT]->(:Organization), (:Person)-[:!KNOWS]->(:Organization)
 ```
 
-- When variable length patten is used, we do not correct the direction
+- When variable length patten is used, we do not correct the direction or validate the schema
 ```
 (:Person)-[:WORKS_AT*]->(:Person), (:Person)-[:WORKS_AT*1..4]->(:Person) 
 ```
@@ -92,6 +97,20 @@ When I was preparing the Cypher examples, I followed these guidelines:
 ```
 (:`Person`)-[:`WORKS_AT`]->(:Organization)
 ```
+
+- Graph schema never contains information about multi-labeled nodes, but the input query can have them. For example, the following input query:
+```
+MATCH (a:Person:Actor)-[:ACTED_IN]->(:Movie)
+RETURN a, count(*)
+```
+
+Will have an accompanying schema:
+
+```
+[(Person, ACTED_IN, Movie), (Actor, ACTED_IN, Movie)]
+```
+
+Which means that you can use any of the labels of the multi-labeled node to verify relationship directions
 
 ## Disclaimer
 
