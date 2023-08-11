@@ -17,13 +17,14 @@ By applying to this competition, you are allowing me, or others, to re-use the p
 ## Rules of the competition
 
 1. Python is preferred (although applications in other languages will be accepted)
-2. No external libraries or tools shall be used. Only [standard, bundled libraries](https://en.wikipedia.org/wiki/Standard_library) apply.
+2. No external libraries or tools shall be used. Only [standard, bundled libraries](https://en.wikipedia.org/wiki/Standard_library) apply. The only exceptions are Cypher AST parsers.
 
 The solutions will be judged based on the following three criterias, in the order given:
 
 1. Accuracy of results
-2. Readability of the code
-3. Performance of the code
+2. Simplicity of the code
+3. Readability of the code
+4. Performance of the code
 
 Prizes are the following:
 
