@@ -1,6 +1,10 @@
 # Cypher direction validation competition
 This repository that hold the information about the competition about validating and fixing relationship direction in Cypher statements based on the given schema.
 
+## Release log
+
+Fix the invalid #31 example on 13th August 2023.
+
 ## Motivation for the competition
 
 In the time of LLMs, it is becoming increasingly popular to implement _Retrieval-Augmented Generation_ (RAG) applications, where you feed additional information to an LLM at query time to increase its ability to generate valid, accurate, and up-to-date answers.
