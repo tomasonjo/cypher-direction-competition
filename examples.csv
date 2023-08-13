@@ -143,7 +143,7 @@ WHERE p.name <> 'Tom Hanks'
 AND m.title = 'Captain Phillips'
 AND m.year > 2019
 AND m.year < 2030
-RETURN p.name","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie)","MATCH (p:Person)<-[:ACTED_IN]-(m:Movie)
+RETURN p.name","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie)","MATCH (p:Person)-[:ACTED_IN]->(m:Movie)
 WHERE p.name <> 'Tom Hanks'
 AND m.title = 'Captain Phillips'
 AND m.year > 2019
