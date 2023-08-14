@@ -3,7 +3,8 @@ This repository that hold the information about the competition about validating
 
 ## Release log
 
-Fix the invalid #31 example on 13th August 2023.
+* Extend the application until 17th September
+* Fix the invalid #31 example on 13th August 2023.
 
 ## Motivation for the competition
 
@@ -43,7 +44,7 @@ Winners' code will be added to this repository.
 ## How to apply
 
 Fill out the form with your name and the link to a public GitHub repository with the implementation code: https://forms.gle/4pgArm8S8NqRa6sy8
-All applications received until Friday, 1st September 2023, 23.59 CEST time will be valid.
+All applications received until Friday, 17th September 2023, 23.59 CEST time will be valid.
 
 ## Test & Validation file
 
