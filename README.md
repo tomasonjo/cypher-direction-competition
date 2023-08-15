@@ -64,7 +64,7 @@ The given schema is given as a list of triples where:
 - second element of the triple specifies the relationship type: `WORKS_AT`
 - third element of the triple specifies the target or end node of a relationship: `Organization`
 
-- **If the given pattern in a Cypher statement doesn't fit the graph schema, simply return an empty string, (there are two examples like this in the test dataset)**
+**If the given pattern in a Cypher statement doesn't fit the graph schema, simply return an empty string, (there are two examples like this in the test dataset)**
 
 Please let me know if you find any bugs in the dataset!
 
