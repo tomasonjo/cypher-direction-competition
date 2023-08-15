@@ -62,7 +62,9 @@ The given schema is given as a list of triples where:
 
 - first element of the triple specifies the source or start node of a relationship: `Person`
 - second element of the triple specifies the relationship type: `WORKS_AT`
-- third element of the triple specifies the target or end node of a relationship: `Organization` 
+- third element of the triple specifies the target or end node of a relationship: `Organization`
+
+- **If the given pattern in a Cypher statement doesn't fit the graph schema, simply return an empty string, (there are two examples like this in the test dataset)**
 
 Please let me know if you find any bugs in the dataset!
 
@@ -70,7 +72,7 @@ Please let me know if you find any bugs in the dataset!
 
 When I was preparing the Cypher examples, I followed these guidelines:
 
-- If the given pattern doesn't fit the graph schema, simply return an empty string
+- **If the given pattern in a Cypher statement doesn't fit the graph schema, simply return an empty string**
 
 - If the relationship is between two nodes of the same labels, there is nothing to validate or correct
 ```
