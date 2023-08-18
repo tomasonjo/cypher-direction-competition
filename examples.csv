@@ -225,10 +225,10 @@ MATCH (m)<-[:DIRECTED]-(d:Person)
 RETURN a.name, m.title, d.name"
 "MATCH (m:Movie) WHERE m.title = ""Kiss Me Deadly""
 MATCH (m)-[:IN_GENRE]-(g:Genre)-[:IN_GENRE]->(rec:Movie)
-MATCH (m)-[:ACTED_IN]->(a:Actor)-[:ACTED_IN]-(rec)
+MATCH (m)-[:ACTED_IN]->(a:Person)-[:ACTED_IN]-(rec)
 RETURN rec.title, a.name","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie)","MATCH (m:Movie) WHERE m.title = ""Kiss Me Deadly""
 MATCH (m)-[:IN_GENRE]-(g:Genre)<-[:IN_GENRE]-(rec:Movie)
-MATCH (m)<-[:ACTED_IN]-(a:Actor)-[:ACTED_IN]-(rec)
+MATCH (m)<-[:ACTED_IN]-(a:Person)-[:ACTED_IN]-(rec)
 RETURN rec.title, a.name"
 "MATCH (p:Person)-[:ACTED_IN]->(m:Movie),
 (coActors:Person)-[:ACTED_IN]->(m)
@@ -280,7 +280,7 @@ MATCH (u)-[r:RATED]->(m:Movie)
 WHERE r.rating > average
 RETURN average , m.title AS movie,
 r.rating as rating
-ORDER BY rating DESC","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie)","MATCH (u:User {name: ""Misty Williams""})-[r:RATED]->(:Movie)
+ORDER BY rating DESC","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie), (User, RATED, Movie)","MATCH (u:User {name: ""Misty Williams""})-[r:RATED]->(:Movie)
 WITH u, avg(r.rating) AS average
 MATCH (u)-[r:RATED]->(m:Movie)
 WHERE r.rating > average
@@ -293,30 +293,30 @@ MATCH (u)<-[r:RATED]-(m:Movie)
 WHERE r.rating > average
 RETURN average , m.title AS movie,
 r.rating as rating
-ORDER BY rating DESC","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie)","MATCH (u:User {name: ""Misty Williams""})-[r:RATED]->(:Movie)
+ORDER BY rating DESC","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie),  (User, RATED, Movie)","MATCH (u:User {name: ""Misty Williams""})-[r:RATED]->(:Movie)
 WITH u, avg(r.rating) AS average
 MATCH (u)-[r:RATED]->(m:Movie)
 WHERE r.rating > average
 RETURN average , m.title AS movie,
 r.rating as rating
 ORDER BY rating DESC"
-"MATCH (p:`Actor`)
+"MATCH (p:`Person`)
 WHERE p.born.year = 1980
 WITH p  LIMIT 3
 MATCH (p)<-[:ACTED_IN]-(m:Movie)
 WITH p, collect(m.title) AS movies
-RETURN p.name AS actor,  movies","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie)","MATCH (p:`Actor`)
+RETURN p.name AS actor,  movies","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie)","MATCH (p:`Person`)
 WHERE p.born.year = 1980
 WITH p  LIMIT 3
 MATCH (p)-[:ACTED_IN]->(m:Movie)
 WITH p, collect(m.title) AS movies
 RETURN p.name AS actor,  movies"
-"MATCH (p:Actor)
+"MATCH (p:Person)
 WHERE p.born.year = 1980
 WITH p  LIMIT 3
 MATCH (p)-[:ACTED_IN]->(m:Movie)<-[:IN_GENRE]-(g)
 WITH p, collect(DISTINCT g.name) AS genres
-RETURN p.name AS actor, genres","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie)","MATCH (p:Actor)
+RETURN p.name AS actor, genres","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie)","MATCH (p:Person)
 WHERE p.born.year = 1980
 WITH p  LIMIT 3
 MATCH (p)-[:ACTED_IN]->(m:Movie)-[:IN_GENRE]->(g)
@@ -327,7 +327,7 @@ RETURN p.name AS actor, genres"
    RETURN m ORDER BY m.imdbRating DESC LIMIT 10
 }
 MATCH  (:User)-[r:RATED]->(m)
-RETURN m.title, avg(r.rating)","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie)","CALL {
+RETURN m.title, avg(r.rating)","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (User, RATED, Movie)","CALL {
    MATCH (m:Movie) WHERE m.year = 2000
    RETURN m ORDER BY m.imdbRating DESC LIMIT 10
 }
@@ -338,7 +338,7 @@ RETURN m.title, avg(r.rating)"
    RETURN m ORDER BY m.imdbRating DESC LIMIT 10
 }
 MATCH  (:User)<-[r:RATED]-(m)
-RETURN m.title, avg(r.rating)","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie)","CALL {
+RETURN m.title, avg(r.rating)","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (User, RATED, Movie)","CALL {
    MATCH (m:Movie) WHERE m.year = 2000
    RETURN m ORDER BY m.imdbRating DESC LIMIT 10
 }
