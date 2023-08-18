@@ -293,7 +293,7 @@ MATCH (u)<-[r:RATED]-(m:Movie)
 WHERE r.rating > average
 RETURN average , m.title AS movie,
 r.rating as rating
-ORDER BY rating DESC","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie),  (User, RATED, Movie)","MATCH (u:User {name: ""Misty Williams""})-[r:RATED]->(:Movie)
+ORDER BY rating DESC","(Person, FOLLOWS, Person), (Person, ACTED_IN, Movie), (Person, REVIEWED, Movie), (Person, WROTE, Movie), (Person, DIRECTED, Movie), (Movie, IN_GENRE, Genre), (Person, RATED, Movie), (User, RATED, Movie)","MATCH (u:User {name: ""Misty Williams""})-[r:RATED]->(:Movie)
 WITH u, avg(r.rating) AS average
 MATCH (u)-[r:RATED]->(m:Movie)
 WHERE r.rating > average
