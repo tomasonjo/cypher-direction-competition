@@ -3,6 +3,7 @@ This repository that hold the information about the competition about validating
 
 ## Release log
 
+* Fix examples where User and Actor nodes were present (18th August 2023)
 * Extend the application until 17th September
 * Fix the invalid #31 example on 13th August 2023.
 
