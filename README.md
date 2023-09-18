@@ -1,11 +1,21 @@
 # Cypher direction validation competition
 This repository that hold the information about the competition about validating and fixing relationship direction in Cypher statements based on the given schema.
 
-## Release log
+## Submissions
 
-* Fix examples where User and Actor nodes were present (18th August 2023)
-* Extend the application until 17th September
-* Fix the invalid #31 example on 13th August 2023.
+* https://github.com/GolvenLD/cypher-direction-competition-entry (Python, RegEx)
+* https://github.com/sakusaku-rich/cypher-direction-competition (Python, RegEx)
+* https://github.com/grapergrape/cypher-competition (Python)
+* https://github.com/mrtnzagustin/cypher-direction-challenge/tree/master (Python, RegEx)
+* https://github.com/Frodnar/cypher_direction_validation_entry (Python, RegEx)
+* https://github.com/yWorks/cypher-query-validator (TypeScript, Cypher Parser)
+* https://github.com/bSharpCyclist/cypher-direction-competition (Python, RegEx)
+* https://github.com/sarmbruster/cypher-direction (Python, Cypher Parser)
+* https://github.com/nielsdejong/cypher-guard (Python, Cypher Parser)
+* https://github.com/filantrop/cypher_fix_relation_directions (Python, Cypher Parser)
+* https://github.com/neo4j/jbang-catalog/blob/main/enforce_relationship_directions.java (Java, Cypher Parser)
+
+
 
 ## Motivation for the competition
 
